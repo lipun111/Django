@@ -1,0 +1,14 @@
+{% extends 'webapp/base.html' %}
+
+    {% block body_block %}
+    <div class="container">
+      <h2>Do You Want To Delete Beer Details..?</h2> <hr>
+      <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-lg btn-danger" value="Delete">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="/" class="btn btn-success btn-lg">Cancel</a>
+
+      </form>
+
+    </div>
+    {% endblock %}

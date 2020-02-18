@@ -1,0 +1,25 @@
+{% extends 'webapp/base.html' %}
+
+    {% block body_block %}
+    <div class="container" align='center'>
+      <h1>Welcome To Beer List DashBord</h1><hr>
+      <table border="2">
+        <thead>
+          <th>Beer Name</th>
+          <th>Details</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+        {% for beer in beer_list %}
+        <tr>
+          <td>{{beer.name}}</td>
+          <td><a href="/{{beer.id}}">Details</a></td>
+          <td><a href="/update/{{beer.id}}">Update</a></td>
+          <td><a href="/delete/{{beer.id}}">Delete</a></td>
+        </tr>
+        {%endfor%}
+      </table><br><br>
+      <a href="/create" class="btn btn-primary btn-lg">Add New Beer Record </a>
+
+    </div>
+    {% endblock %}

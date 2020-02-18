@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} Home {% endblock %}
+    {% block content %}
+      <div class="jumbotron" align="center">
+        <h1>Emplyoee Dashbord</h1><hr>
+        {% if emplyoee_list %}
+        <table border="2px">
+          <thead>
+            <th>Emplyoee Name</th>
+            <th>Emplyoee Details</th>
+            <th>Update Emplyoee</th>
+            <th>Delete Emplyoee</th>
+          </thead>
+          {% for emp in emplyoee_list %}
+            <tr>
+              <td>{{emp.ename}}</td>
+              <td><a href="/detail/{{emp.id}}">Details</a></td>
+              <td><a href="/update/{{emp.id}}">Update</a></td>
+              <td><a href="/delete/{{emp.id}}">Delete</a></td>
+            </tr>
+          {% endfor %}
+        </table>
+
+        {% else %}
+        <p>There Is No Emplyoee Information</p>
+        {% endif %}
+      </div>
+    {% endblock %}

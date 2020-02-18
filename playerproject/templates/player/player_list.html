@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'player/base.html'%}
+    {% block body_block %}
+    <div class="container" align= 'center'>
+     <h1>Welcome To Player List..</h1><hr>
+
+              <table border="2">
+                <thead>
+                  <th>Player Name</th>
+                  <th>Player Details</th>
+                  <th>Update Player</th>
+                  <th>Delete Player</th>
+                </thead>
+                  {% for player in player_list %}
+                    <tr>
+                      <td>{{player.name}}</td>
+                      <td><a href="{{player.id}}">Details</a></td>
+                      <td><a href="/update/{{player.id}}">Update</a></td>
+                      <td><a href="/delete/{{player.id}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+              </table><br><br>
+              <a href="/create" class="btn btn-primary btn-lg">Add New Player</a>
+          </div>
+    {% endblock %}

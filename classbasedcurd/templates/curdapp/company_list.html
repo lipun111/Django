@@ -1,0 +1,20 @@
+{% extends 'curdapp/base.html' %}
+  {% block bodyblock %}
+  <div class="container">
+    <div class="jumbotron">
+    <h2 align="center">Compay List</h2><hr>
+    {% if company_list %}
+      <ul>
+        {% for company in company_list %}
+        <li><a href="/{{company.id}}">{{company.name}}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>There is No Company</p>
+    {% endif %}
+
+    </div>
+    <a href="{% url 'create' %}" class="btn btn-primary btn-lg">ADD NEW COMPANY</a>
+    </div>
+
+  {% endblock %}

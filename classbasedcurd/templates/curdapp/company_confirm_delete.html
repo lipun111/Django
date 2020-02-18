@@ -1,0 +1,13 @@
+{% extends 'curdapp/base.html' %}
+  {% block bodyblock %}
+    <div class="container" align="center">
+      <div class="jumbotron">
+        <h2>Do you want to delete the company record?</h2>
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-lg" name="button">Delete</button>
+          <a href="{% url 'home' %}" class="btn btn-success btn-lg">Cancel</a>
+        </form>
+      </div>
+    </div>
+  {% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/myfile.css' %}" type="text/css">
+</head>
+<body>
+    <div class="container" align="center">
+        <h2>PLAYER LIST</h2><hr>
+        {% if all_player%}
+        <table>
+            <thead>
+            <th>  NAME  </th>
+            <th>  PHONE NO  </th>
+            <th>  CATEGORY  </th>
+            <th>  BASE PRICE  </th>
+            <th>  BID PRICE  </th>
+            <th>  CITY  </th>
+            </thead>
+            {% for p in all_player%}
+            <tr>
+                <td>{{ p.name }}</td>
+                <td>{{ p.phoneno }}</td>
+                <td>{{ p.category }}</td>
+                <td>{{ p.baseprice }}</td>
+                <td>{{ p.bidprice }}</td>
+                <td>{{ p.city }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <a href="http://127.0.0.1:8000/">ADD MORE</a>
+    </div>
+
+</body>
+</html>

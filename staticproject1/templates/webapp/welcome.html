@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Static Page</title>
+    <link href="{% static 'css/myfile.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Welcome To Static Page in Django</h1>
+    <h2><em>{{ wish }}
+        {{ name }}</em></h2>
+    <h2>Current date and time: {{ date }}</h2>
+
+    <img id="j" src="{% static 'images/goodmornng.jpg' %}" alt="No image found"/>
+    <img id="i" src="{% static 'images/1.jpg' %}" alt="No image found"/>
+
+</body>
+</html>

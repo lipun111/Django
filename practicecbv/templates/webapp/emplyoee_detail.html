@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Emplyoee Details {% endblock %}
+    {% block content %}
+      <div class="jumbotron">
+        <h1 align="center">Emplyoee Details</h1><hr>
+        <div class="container">
+          <ul>
+            <li>Emplyoee ID: {{emplyoee.eid}}</li>
+            <li>Emplyoee Name: {{emplyoee.ename}}</li>
+            <li>Emplyoee Salary: {{emplyoee.esal}}</li>
+            <li>Emplyoee Address: {{emplyoee.eaddrs}}</li>
+          </ul>
+        </div>
+      </div>
+    {% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block title_block %} {{post.title}} {% endblock %}
+
+      {% block contain %}
+        <div class="jumbotron">
+          <h2>{{post.title}}</h2> &nbsp&nbsp <a href="/" class="btn btn-primary">Home</a><hr>
+          <p id="date">Published on {{post.publish}} by {{post.author|title}}</p>
+          <h4>{{post.body|linebreaks}}</h4>
+
+        </div>
+        <div class="container" align='center'>
+          <a href="/{{post.id}}/share" class="btn btn-primary btn-lg">Share Post by Mail</a>
+        </div><br>
+        {% with comments.count as comments_count %}
+        <h2>{{comments_count}} Comment{{comments_count|pluralize}}</h2>
+        {% endwith %}
+        <div class="jumbotron">
+          {% if comments %}
+            {% for comment in comments %}
+                <p id="ch">Comment {{forloop.counter}} by {{comment.name}} on {{comment.created}}</p>
+                  <div class="cb"> {{comment.body}} </div><br>
+            {% endfor %}
+            {% else %}
+                <p> There is no comment yet!!!!</p>
+          {% endif %}
+          </div> <br><br>
+          <div class="cmt" align='center'>
+                {% if csubmit %}
+                  <h2>Your Comment Added Successfully...</h2>
+                  {% else %}
+                    <form method="post">
+                      <h2>Add Your Comment..</h2>
+                      {{form.as_p}}
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-info btn-lg" name="button">Submit Comment</button>
+                    </form>
+                  {% endif %}
+          </div>
+      {% endblock %}

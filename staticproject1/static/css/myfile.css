@@ -1,0 +1,16 @@
+#i, #j{
+    height:500px;
+    width: 1000px;
+}
+h1{
+    text-align: center;
+    color: red;
+    text-decoration: underline;
+    border: 2px solid red;
+    padding-bottom: 5px;
+}
+h2{
+    color: green;
+    text-align: center;
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Show Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" align="center">
+      <div class="jumbotron">
+        <h1>Details Of Company</h1><hr>
+        {% if data %}
+        <table border="2px">
+          <thead>
+            <th>Company Nmane</th>
+            <th>Company Email</th>
+            <th>Company Phone Number</th>
+            <th>Company Address</th>
+            <th>Company Income</th>
+            <th>Update Company Details</th>
+            <th>Delete Company Details</th>
+          </thead>
+            {% for d in data %}
+              <tr>
+                <td>{{d.cname}}</td>
+                <td>{{d.cemail}}</td>
+                <td>{{d.cphone}}</td>
+                <td>{{d.caddrs}}</td>
+                <td>{{d.cincome}}</td>
+                <td><a href="/update/{{d.id}}">Update</a></td>
+                <td><a href="/delete/{{d.id}}">Delete</a></td>
+              </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+          <p>There Is No Company Data</p>
+        {% endif %}
+      </div><br><br>
+      <a href="{% url 'add' %}" class="btn btn-primary btn-lg">ADD NEW COMPANY</a>
+    </div>
+  </body>
+</html>

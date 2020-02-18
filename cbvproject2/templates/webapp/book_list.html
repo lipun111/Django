@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% extends 'webapp/base.html' %}
+    {% block body_block %}
+        <h1 align='center'>Books information</h1><hr>
+        {% for book in book_list %}
+        <h2 align='center'><a href="/{{book.id}}"> {{book.titile}}</a></h2>
+        {% endfor %}
+    {% endblock %}

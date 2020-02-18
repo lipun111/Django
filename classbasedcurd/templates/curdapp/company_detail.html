@@ -1,0 +1,18 @@
+{% extends 'curdapp/base.html' %}
+  {% block bodyblock %}
+  <div class="container">
+    <div class="jumbotron">
+    <h2 align="center">Compay Details</h2><hr>
+    <a href="{% url 'home' %}" class="btn btn-primary">HOME</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/update/{{company.id}}" class="btn btn-primary">UPDATE</a>&nbsp&nbsp&nbsp
+    <a href="/delete/{{company.id}}" class="btn btn-danger">DELETE</a><hr><br><br>
+      <ul>
+        <li>Compay Name:{{company.name}}</li>
+        <li>Compay Ceo:{{company.ceo}}</li>
+        <li>Compay Address:{{company.addrs}}</li>
+        <li>Compay Email:{{company.email}}</li>
+      </ul>
+
+    </div>
+    </div>
+  {% endblock %}

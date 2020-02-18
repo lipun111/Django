@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Show Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" align="center">
+      <div class="jumbotron">
+        <h1>Update Company Details</h1><hr>
+        <form method="post">
+          {% csrf_token %}
+
+            Company Name: <input type="text" name="cname" value="{{data.cname}}"><br><br>
+            Company Email: <input type="text" name="cemail" value="{{data.cemail}}"><br><br>
+            Company Address: <input type="text" name="caddrs" value="{{data.caddrs}}"><br><br>
+            Company Phone: <input type="text" name="cphone" value="{{data.cphone}}"><br><br>
+            Company Income: <input type="text" name="cincome" value="{{data.cincome}}"><br><br>
+
+          <button type="submit" name="button" class="btn btn-success">Submit Record</button>
+        </form>
+      </div><br><br>
+
+    </div>
+  </body>
+</html>

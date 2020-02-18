@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Delte Record{% endblock %}
+
+  {% block content %}
+    <div class="jumbotron">
+      <h2>Are You Want To Delete The Record..?</h2>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-lg" name="button"> Delete</button>
+        <a href="{% url 'home' %}" class="btn btn-success btn-lg"> Cancel</a>
+      </form>
+    </div>
+  {% endblock %}

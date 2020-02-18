@@ -1,0 +1,13 @@
+{% extends 'curdapp/base.html' %}
+  {% block bodyblock %}
+    <div class="container" align="center">
+      <div class="jumbotron">
+        <h2>Insert/Update Company Details</h2><hr>
+        <form method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button type="submit" class="btn btn-success btn-lg" name="button">Submit</button>
+        </form>
+      </div>
+    </div>
+  {% endblock %}

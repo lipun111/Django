@@ -1,0 +1,17 @@
+{% extends 'webapp/base.html' %}
+
+    {% block body_block %}
+    <div class="container">
+      <h2>Welcome To Beer Details &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <a href="/" class="btn btn-primary btn-lg">Home </a></h2> <hr>
+
+      <ul>
+        <li>Name : {{beer.name}}</li>
+        <li>Test : {{beer.test}}</li>
+        <li>Color : {{beer.color}}</li>
+        <li>Price : {{beer.price}}</li>
+      </ul>
+
+
+    </div>
+    {% endblock %}

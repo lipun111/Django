@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/myfile.css' %}" type="text/css">
+</head>
+<body>
+    <div class="container" align="center">
+        <h2>PLAYER LIST</h2><hr>
+        {% if data%}
+        <table>
+            <thead>
+            <th>  Team Name </th>
+            <th>  Match Played  </th>
+            <th> WIN  </th>
+            <th>  LOSE  </th>
+            <th>  DRAW </th>
+            <th>  POINT </th>
+            </thead>
+            {% for p in data %}
+            <tr>
+                <td>{{ p.teamname }}</td>
+                <td>{{ p.match}}</td>
+                <td>{{ p.win }}</td>
+                <td>{{ p.lose }}</td>
+                <td>{{ p.draw }}</td>
+                <td>{{ p.point }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <a href="http://127.0.0.1:8000/">ADD MORE</a>
+    </div>
+
+</body>
+</html>

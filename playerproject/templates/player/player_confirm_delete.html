@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'player/base.html'%}
+    {% block body_block %}
+
+    <div class="container" align='center'>
+      <form method="post">
+        {% csrf_token %}
+        <h2>Do you Want to Delete This decord..?</h2>
+        <button type="submit" class="btn btn-danger" name="button">Delete</button>
+        <a href="/" class="btn btn-success">Cancel</a>
+      </form>
+
+    </div>
+    {% endblock %}

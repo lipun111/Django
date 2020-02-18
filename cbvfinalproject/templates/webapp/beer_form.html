@@ -1,0 +1,13 @@
+{% extends 'webapp/base.html' %}
+
+    {% block body_block %}
+    <div class="container">
+      <h2>Insert Beer Details &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h2><br>
+         <!-- <a href="/" class="btn btn-primary btn-lg">Home </a></h2> <hr> -->
+         <form method="post">
+           {{form.as_p}}
+           {% csrf_token %}
+           <input type="submit" class="btn btn-primary btn-lg" value="Add/Update Beer">
+         </form>
+    </div>
+    {% endblock %}

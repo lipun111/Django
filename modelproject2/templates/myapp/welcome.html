@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>models</title>
+</head>
+<body>
+    <h1>RECORDS ARE.......</h1><hr>
+    {% if elist%}
+        <table>
+            <thead>
+            <th>EMP ID</th>
+            <th>EMP NAME</th>
+            <th>EMP SAL</th>
+            <th>EMP ADDR</th>
+            </thead>
+            {% for e in elist %}
+                <tr>
+                    <td>{{ e.Eid }}</td>
+                    <td>{{ e.Ename }}</td>
+                    <td>{{ e.Esal }}</td>
+                    <td>{{ e.Eaddr }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>NO RECORD FOUND</h2>
+    {% endif %}
+
+</body>
+</html>

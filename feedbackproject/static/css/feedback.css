@@ -1,0 +1,9 @@
+body{
+  background-image: url(https://images.unsplash.com/photo-1568522978465-a16900eddec0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: yellow;
+}
+h2{
+  align: right;
+}
